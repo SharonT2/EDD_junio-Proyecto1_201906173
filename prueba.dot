@@ -1,0 +1,34 @@
+digraph G{
+label=" Sharon ";
+node [shape=box];
+//agregando nodos
+N0[label="Sharon" ];
+N1[label="Marleny" ];
+N2[label="Sheny" ];
+N3[label="Sonia" ];
+N4[label="Yesi" ];
+N5[label="Cami" ];
+
+//agregado conexiones o flechas
+{rank=same;
+N0 -> N1;
+N1 -> N2;
+N2 -> N3;
+N3 -> N4;
+N4 -> N5;
+N5 -> N0;
+
+}N0 -> libro3S -> libro2S -> libro1S;
+
+N1 -> libro3M -> libro2M -> libro1M;
+
+N2 -> libro3SH -> libro2SH -> libro1SH;
+
+N3 -> libro3So -> libro2So -> libro1So;
+
+N4 -> libro3Y -> libro2Y -> libro1Y;
+
+N5 -> libro3C -> libro2C -> libro1C;
+
+
+}

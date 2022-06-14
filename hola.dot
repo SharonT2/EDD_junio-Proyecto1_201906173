@@ -1,0 +1,7 @@
+digraph G{
+    {rank = same
+    a->b
+    b->c
+    c->a
+    }
+}
