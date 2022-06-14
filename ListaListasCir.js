@@ -1,4 +1,4 @@
-alert("CAMBIOOOOOOOOOOOOOOOOOOOOOOO")
+alert("CAMBIOOOOOOOOOOOOOOOOOOOOOOOSHARON")
 class NodoSimpleCir{
     constructor(libro){
         this.libro = libro;
