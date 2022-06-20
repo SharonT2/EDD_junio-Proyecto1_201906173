@@ -1,12 +1,12 @@
-alert("CAMBIOOOOOOOOOOOOOOOOOOOOOOOSHARON")
-class NodoSimpleCir{
+//alert("CAMBIOOOOOOOOOOOOOOOOOOOOOOOSHARON")
+class NodoSimpleCir{//Para la listita(Sublista)
     constructor(libro){
         this.libro = libro;
         this.next = null;
     }
 }
 
-class NodoCir{
+class NodoCir{//Nodo de la lista principal, osea la circular
     constructor(cliente){
         this.cliente = cliente;
         this.next = null;
@@ -15,7 +15,7 @@ class NodoCir{
     }
 }
 
-class ListaCir{
+class ListaCir{//Clase de la lista principal, la ciruular
     constructor(){
         this.first = null;
         this.last = null;
@@ -51,7 +51,6 @@ class ListaCir{
             
             while(this.first.next!=aux){
                 this.first=this.first.next;
-
             }
             this.last=nuevo;
             this.first.next=this.last;
@@ -196,6 +195,12 @@ class ListaCir{
         //document.write(codigodot)
         return codigodot
     }
+
+    pruebaEsconder(){
+        document.getElementById("cuadro1").style.display = "none"
+        document.getElementById("cuadro2").style.display = "none"
+        
+    }
 }
 
 var listalistas = new ListaCir();
@@ -249,3 +254,5 @@ try{
 }catch(e){
     console.log("error")
 }
+
+listalistas.pruebaEsconder()

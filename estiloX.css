@@ -1,0 +1,181 @@
+body{
+    background-color: rgb(180, 185, 185);
+    background-image: url(fondo.jpg);  
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+im{
+    filter: blur(6px);
+}
+#Entrada{
+    width: 400px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+#Salida{
+    width: 730px;
+    float: right;
+    margin-top: 50px;
+    margin-right: -100px;
+}
+
+
+
+h1{
+    margin-left: 450px;
+    margin-right: 400px;
+    color: rgb(29, 32, 32);
+}
+
+h2{
+    margin-left: 200px;
+    color: rgb(29, 32, 32);
+    
+}
+
+
+#titulo{
+    background: rgb(143, 119, 105);
+    height: 50px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+.file-select {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 650px;
+
+
+}
+
+.file-select::before {
+    background-color: #2f3233;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Seleccionar'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+}
+
+
+#document2{ /* Botón para poder iniciar sesión */
+    margin-top: 20px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#document{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+#document3{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#document4{
+    margin-top: 20px;
+    margin-left: 1100px;
+    width: 100px;
+    height: 30px;
+    background-color: #2f3233;
+    color: white;
+}
+
+.list{
+    margin-left: 10px;
+    margin-top: -150px;
+}
+
+
+.list2{
+    margin-left: 10px;
+    margin-top: 600px;
+}
+
+form{
+    border: 7px solid rgb(63, 56, 49); /*agregando un borde de color y grosor*/
+    padding: 20px;
+    margin-left: auto;/*centrando */
+    margin-right: auto; /*centrando */
+    background: rgb(204, 204, 204);/*color al fondo del formulario */
+    margin-top: 20px; /*margen de arriba */
+    border-radius: 5%; /*agregar un borde más redondo(en el 100% se convierte en un circulo) */
+    height: 300px;
+    width: 400px;
+}
+
+#titulolog{
+    margin-top: 40px;
+    text-align: center;
+    font-family: Sans-serif;
+}
+
+label{
+    font-size: 13px;
+    display: block;/*alinear todo */
+    margin-top: 5px; /*margen de arriba */
+    font-family: Sans-serif; /*estilo de letra en cada labels */
+}
+
+input{
+    margin-bottom: 20px;/*alinear botón */
+    width: 100%; /*ancho */
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(118, 104, 93);
+    height: 40px;
+}
+
+
+input[type="submit"]{
+    background: rgb(115, 95, 74); /*color solo al boton */
+}
+
+input[type="submit"]:hover{ /*color al boton, cuando el usuario se posicione en el  */
+    background: rgb(58, 54, 50);
+}
+
+input[type="button"]:hover{ /*color al boton, cuando el usuario se posicione en el  */
+    background: rgb(58, 54, 50);
+}
+
+#prueba1{
+    background: rgb(197, 138, 80);
+    margin-top: -100px;
+    width: 1200px;
+    height: 1050px;
+}
+
+
+
+

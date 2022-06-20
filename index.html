@@ -1,20 +1,85 @@
+<!--Agregado para poder indicarle qeu es archivo statico-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./estilo.css">
+    <title>Frontend</title>
+    <link type="text/css" rel="stylesheet" href="estiloX.css"> <!--Modificación para que pudera encontrar el archivo css-->
 </head>
 <body>
-    <h1>LISTA CIRCULAR DOBLEMENTE ENLAZADA</h1>
-    <div id="cuadro1"></div>
-    <div id="cuadro2"></div>
-    <div id="cuadro3"></div>
-    <script src="//d3js.org/d3.v5.min.js"></script>
-    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    
+    <!---Importando las estructuras en el html-->
+<!--    <script type="text/javascript" src="./matrizDispersaMia.js"></script>
+    <script type="text/javascript" src="./arbolBBXFUN.js"></script>
+    <script type="text/javascript" src="./ortgonalMia.js"></script>------------>
+<!--Frontend-->
+    <div id="titulo">
+        <h1>BIBLIOTECA VIRTUAL</h1>
+    </div>
+
+    <!--<div id="titulo">
+    <h2>📚 Hola mundo, Sí funciona el frontend</h2>
+    </div>-->
+
+    <div id="botones">
+        <!--BOTOON PARA CARGAR ARCHIVOS<div class="file-select" id="src-file1" >
+            <input type="file" name="document" id="document" style="cursor: pointer"></input>
+        </div>---->
+        <input type="button" value="Iniciar Sesión" id="document2" style="cursor: pointer" onclick="uno.mostrarLog()"></input>
+        <input type="submit" value="Tops" id="document3" style="cursor: pointer" onclick=""></input>
+        <!-- CARGA MASIVA -->
+
+        
+        <!--</form>
+            <form method="get" action="http://localhost:5000/borrar" target="_blank">
+            <input type="button" value="nombreRespectivo" id="document3" style="cursor: pointer" action="/Prueba"></input>
+        </form>---->
+    </div>
+
+
+    <div id="botones2"; style="display:none">
+        
+        <input type="file" name="document" id="document" style="cursor: pointer"></input>
+
+    </div>
+
+    <!---<div id="Entrada">
+        <h2>Archivo de entrada</h2>
+        <textarea cols="70" rows="2" wrap="hard" readonly="no"></textarea>
+    </div>--->
+    
+    <!----<div id="Salida">
+        <h2>Archivo de salida</h2> 
+        <textarea cols="80" rows="30" wrap="hard" readonly="no"></textarea>
+    </div>---->
+
+
+    <!----<form method="get" action="http://localhost:5000/docu" target="_blank">
+    <input type="submit" value=" Documentacion " id="document4" style="cursor: pointer"></input>
+    </form>---->
+
+    <!--LOGIN--->
+    <div name="Login" id = "Login"; style="display:none">
+        <form id="formularioLogin">
+            <p id="titulolog">Inicia sesión</p>
+            <label for="nombre" >Usuario:</label>
+            <input type="text" id="usuarioA"  placeholder="Escriba su user"></input>     
+            <label for="contraseña"> contraseña: </label>
+            <input type="password" id="passwordA" placeholder="Escriba su contraseña"></input>
+            <input type="button"  id="inicial" value="Iniciar SesiónA" style="cursor: pointer" onclick="uno.admInicio()"></input>
+        </form>
+    </div>
+
+    <div id="prueba1" ; style="display:none"> </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
-    <script type="text/javascript" src="./ListaListasCir.js"></script>
+    
+    <!--<script type="text/javascript" src="./sharonIns.js"></script>---->
+    <script type="text/javascript" src="./Ortogonal.js"></script>
+    <script type="text/javascript" src="./dispersaS.js"></script>
+    <script type="text/javascript" src="./biblio.js"></script><!--Este será el principal--> 
 </body>
 </html>
