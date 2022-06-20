@@ -40,9 +40,10 @@
 
 
     <div id="botones2"; style="display:none">
-        
         <input type="file" name="document" id="document" style="cursor: pointer"></input>
-
+        <input type="button" value="Libros Thriller" id="ortogonal" style="cursor: pointer" onclick="uno.divOrto()"></input>
+        <input type="button" value="Libros Fantasía" id="dispersa" style="cursor: pointer" onclick="uno.divDis()"></input>
+        <input type="button" value="Limpiar" id="limpiar" style="cursor: pointer" onclick="uno.limpiar()"></input>
     </div>
 
     <!---<div id="Entrada">
@@ -72,7 +73,8 @@
         </form>
     </div>
 
-    <div id="prueba1" ; style="display:none"> </div>
+    <div id="prueba1"; style="display:none"> </div> <!--Para la matriz ortogonal-->
+    <div id="prueba2"; style="display:none"> </div> <!--Para la matriz dispersa-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>

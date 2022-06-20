@@ -165,7 +165,7 @@ class matrizDispersa{
         
         console.log("Entra1")
         var codigodot="digraph G{ \ngraph[size=\"12.70, 10.27\"]\n"
-        codigodot += "label = \"- Autores -\" \nfontsize=\"20pt\"\n\n";
+        codigodot += "label = \"MATRIZ DISPERSA ESTRUCTURA(Libros Thriller)\" \nfontsize=\"20pt\"\n\n";
         codigodot+="node[shape=rect, width=0.5, height=0.5, fillcolor=\"white\", style=filled];\n"
         codigodot+="edge[dir=\"both\"];\n";
         codigodot += "node[label = \"autores\" fillcolor=\"gray38\", pos = \"-1,1!\"]raiz;\n";
@@ -263,7 +263,7 @@ class matrizDispersa{
     }
     generarImagenDis(codigodot){
         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAVEARE")
-        d3.select("#prueba1")
+        d3.select("#prueba2")
         .graphviz()
         .engine("neato")
         .height(3500)

@@ -111,6 +111,32 @@ h2{
     color: white;
 }
 
+#ortogonal{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+#dispersa{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#limpiar{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
 .list{
     margin-left: 10px;
     margin-top: -150px;
@@ -171,7 +197,14 @@ input[type="button"]:hover{ /*color al boton, cuando el usuario se posicione en 
 
 #prueba1{
     background: rgb(197, 138, 80);
-    margin-top: -100px;
+    margin-top: 10px;
+    width: 1200px;
+    height: 1050px;
+}
+
+#prueba2{
+    background: rgb(39, 134, 179);
+    margin-top: 100px;
     width: 1200px;
     height: 1050px;
 }

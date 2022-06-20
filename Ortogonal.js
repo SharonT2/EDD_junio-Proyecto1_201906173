@@ -171,9 +171,9 @@ class matrizOrtogonal{
             }
         }
     }
-    graficarMatriz(){//--------metodo graficar
+    graficarMatrizOr(){//--------metodo graficar
         console.log("Entra1")
-        var codigodot = " digraph G{ \ngraph[size=\"12.70, 10.27\"]\n label = \"MATRIZ ORTOGONAL ESTRUCTURA\" \nfontsize=\"50pt\"\n\n";
+        var codigodot = " digraph G{ \ngraph[size=\"12.70, 10.27\"]\n label = \"MATRIZ ORTOGONAL ESTRUCTURA(Libros fantasía)\" \nfontsize=\"50pt\"\n\n";
         codigodot+="node[shape=rect, width=0.5, height=0.5, fillcolor=\"white\", style=filled];\n"
         codigodot+="edge[dir=\"none\"];\n";
         codigodot += "node[label = \"autores\" fillcolor=\"none\", pos = \"-1,1!\"]raiz;\n";

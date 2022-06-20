@@ -2,7 +2,7 @@ class Biblio{
     //static matrizOrtogonal;
     ///static instancias;
     //static ola = new this.matrizDispersaA();
-    static mat;//ortogonal
+    static mat1;//ortogonal
     static mat2;//dispersa
     mostrarLog(){
         document.getElementById("Login").style.display = "block"
@@ -29,13 +29,28 @@ class Biblio{
         }
     }
 
-    paginaAdmin(){
+    paginaAdmin(){//ocultando y mostrando cosas para el admin
         document.getElementById("botones2").style.display = "block"
+    }
+
+    divOrto(){
+        document.getElementById("prueba2").style.display = "none"
         document.getElementById("prueba1").style.display = "block"
     }
 
+    divDis(){
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba2").style.display = "block"
+    }
+
+
+    limpiar(){
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba1").style.display = "none"
+    }
+
     cargarArchivo(x){//Cargando libros
-        Biblio.mat = new matrizOrtogonal();
+        Biblio.mat1 = new matrizOrtogonal();
         Biblio.mat2 = new matrizDispersa();
         console.log("hola aquí sí entra")
         //let matriz = new matrizOrtogonal();
@@ -64,8 +79,12 @@ class Biblio{
                 console.log("fila: " + uno + " columna: "+ dos +" tres: " + tres)
                 //-----------ORTOGONAL Biblio.mat.insertOrtogonal(uno, dos, tres)
                 if( libros.categoria == "Fantasia"){
-                    Biblio.mat.insertOrtogonal(uno, dos, tres);
+                    Biblio.mat1.insertOrtogonal(dos, uno, tres);
                 }
+                if( libros.categoria == "Thriller"){
+                    Biblio.mat2.insertDispersa(dos, uno, tres);
+                }
+                
                 //Biblio.mat2.insertDispersa(uno, dos, tres)
                 //Biblio.mat.insertOrtogonal(libros.fila, libros.columna , libros.nombre_libro)
                 console.log(libros.isbn + " " + libros.nombre_autor + " " + libros.nombre_libro + " " + libros.cantidad + " " + libros.fila + " " + libros.columna + " " + libros.paginas + " " + libros.categoria)
@@ -148,6 +167,7 @@ function grafoMatrizUno(){
 
     //console.log("Holaaaaaaaaa")
     //Biblio.mat.graficarMatriz();
+    Biblio.mat1.graficarMatrizOr();
     Biblio.mat2.graficarMatrizDis();
 }
 
