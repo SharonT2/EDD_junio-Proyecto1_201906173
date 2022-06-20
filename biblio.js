@@ -47,6 +47,24 @@ class Biblio{
         document.getElementById("prueba2").style.display = "block"
     }
 
+
+    divOrtox(){
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba2y").style.display = "none"
+        document.getElementById("prueba1x").style.display = "block"
+
+    }
+
+    divDisy(){
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba1x").style.display = "none"
+        document.getElementById("prueba2y").style.display = "block"
+    }
+
     divTree(){
         document.getElementById("prueba1").style.display = "none"
         document.getElementById("prueba2").style.display = "none"
@@ -203,12 +221,13 @@ function grafoMatrizUno(){
     //Biblio.mat.graficarMatriz();
     Biblio.mat1.graficarMatrizOr();
     Biblio.mat2.graficarMatrizDis();
-}
 
+    Biblio.mat1.graficarMatrizBonitaOr();
+    Biblio.mat2.graficarMatrizDisBonita();
+}
 function grafoArbol(){
     Biblio.mat3.graphTree();
 }
-
 function grafoCircular(){
     Biblio.mat4.graficarCir();
 }

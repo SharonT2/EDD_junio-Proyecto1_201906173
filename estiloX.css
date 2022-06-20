@@ -146,6 +146,25 @@ h2{
     color: white;
 }
 
+#ortogonalx{
+    background-image: url(libro.jpg);
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+#dispersay{
+    background-image: url(libro.jpg);
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
 #autores{
     margin-top: 10px;
     margin-left: 1420px;

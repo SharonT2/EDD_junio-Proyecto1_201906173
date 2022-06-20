@@ -275,7 +275,7 @@ class matrizOrtogonal{
 
     graficarMatrizBonitaOr(){//--------metodo graficar
         console.log("Entra1")
-        var codigodot="digraph G{ \n"
+        var codigodot="digraph G{ \n bgcolor = none\n"
         //codigodot += "label = \"- Autores -\" \nfontsize=\"20pt\"\n\n";
         //codigodot+="edge[style = \"none\"];\n"
         codigodot+="node[shape=rect, width=0.5, height=0.5, fillcolor=\"white\", style=filled];\n"
@@ -371,13 +371,24 @@ class matrizOrtogonal{
         }
         codigodot += "\n\n}" 
         //return codigodot;
-        this.generarImagen(codigodot);
+        this.generarImagen2(codigodot);
         return codigodot;
     }
 
     generarImagen(codigodot){
         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAVEARE")
         d3.select("#prueba1")
+        .graphviz()
+        .engine("neato")
+        .height(3500)
+        .width(2800)
+        .dot(codigodot)
+        .render()
+    }
+
+    generarImagen2(codigodot){
+        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAVEARE")
+        d3.select("#prueba1x")
         .graphviz()
         .engine("neato")
         .height(3500)
