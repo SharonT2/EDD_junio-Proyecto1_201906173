@@ -1,5 +1,6 @@
 //alert("CAMBIOOOOOOOOOOOOOOOOOOOOOOOSHARON")
 class NodoSimpleCir{//Para la listita(Sublista)
+    
     constructor(libro){
         this.libro = libro;
         this.next = null;
@@ -16,6 +17,7 @@ class NodoCir{//Nodo de la lista principal, osea la circular
 }
 
 class ListaCir{//Clase de la lista principal, la ciruular
+    static contU = 0
     constructor(){
         this.first = null;
         this.last = null;
@@ -37,7 +39,7 @@ class ListaCir{//Clase de la lista principal, la ciruular
         }
     }
 
-    insertar(cliente){
+    insertarUs(cliente){
         
         var nuevo = new NodoCir(cliente);
         //nuevo.dato = dato;
@@ -62,6 +64,7 @@ class ListaCir{//Clase de la lista principal, la ciruular
     }
 
     insertarLibroCir(cliente, libro){
+
         var auxCliente = this.first
         var confir = false
         do{
@@ -124,15 +127,18 @@ class ListaCir{//Clase de la lista principal, la ciruular
                     console.log("Entraa " + auxLibro.libro)
                     //console.log(auxLibro.libro)
                     if(confir == false){
-                        acumulador += "N" + num + " -> " + auxLibro.libro;
+                        acumulador += "N" + num + " -> " + auxLibro.libro + ListaCir.contU;
                         auxLibro = auxLibro.next
                         confir = true
+                        ListaCir.contU++
                     }else{
-                        acumulador +=  " -> " + auxLibro.libro;
+                        acumulador +=  " -> " + auxLibro.libro  + ListaCir.contU;
                         auxLibro = auxLibro.next
+                        ListaCir.contU++
                     }
                     //auxLibro = auxLibro.next
                 }
+                this.contU++
                 acumulador += ";\n"
                 console.log("===========" + acumulador)
                 return acumulador
@@ -143,7 +149,7 @@ class ListaCir{//Clase de la lista principal, la ciruular
         }while(aux != this.first);
     };
     
-    graficar(){
+    graficarCir(){
         console.log("cambios")
         console.log(this.first)
         console.log(this.last)
@@ -153,15 +159,13 @@ class ListaCir{//Clase de la lista principal, la ciruular
         var nodos = "";
         var num = 0;
         var sublistLibros = ""
-        //console.log("________________" + tem.cliente);
         while(tem != this.last){
             //console.log(aux.dato);
             nodos += "N" + num + "[label=\"" + tem.cliente + "\" ];\n"
             if(tem.next == this.last){
                 //this.insertarLibroCir(tem.next, libro)
                 //---*console.log(this.graficandoSub(this.last.cliente, num));
-                sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficar la sublista
-        //        console.log("________________" + tem.cliente);
+                sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficarCir la sublista
                 num ++;
                 nodos += "N" + num + "[label=\"" + this.last.cliente + "\" ];\n"
                 //console.log(graficandoSub(this.last.cliente));
@@ -170,14 +174,12 @@ class ListaCir{//Clase de la lista principal, la ciruular
                 var auxnum = num + 1;
                 conex += "N" + num + " -> N" +  auxnum + ";\n";
                 //console.log(graficandoSub(cliente));
-        //        console.log("________________" + tem.cliente);
-                sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficar la sublista
+                sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficarCir la sublista
             }
             if(tem.next == this.last){
                 conex += "N" + auxnum + " -> N" + num + ";\n";
                 conex += "N" + num + " -> N" +  0 + ";\n";
                 //console.log(graficandoSub(cliente));
-        //        console.log("________________" + tem.cliente);
                // sublistLibros += this.graficandoSub(tem.cliente, num) + "\n"
             }
             tem = tem.next;
@@ -185,34 +187,45 @@ class ListaCir{//Clase de la lista principal, la ciruular
             num ++;
         }
         num--;
-        sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficar la sublista
+        sublistLibros += this.graficandoSub(tem.cliente, num) + "\n" //--llamo al otro método que ocuparé para graficarCir la sublista
         codigodot += "//agregando nodos\n"
         codigodot += nodos + "\n"
         codigodot += "//agregado conexiones o flechas\n"
-        codigodot += "{rank=same;\n" + conex + "\n}"
+        codigodot += "{rank=same;\n" + conex + "\n}\n"
         codigodot += sublistLibros + "\n}"
         console.log(codigodot);
         //document.write(codigodot)
+        this.generarImagen(codigodot)
         return codigodot
     }
-
     pruebaEsconder(){
         document.getElementById("cuadro1").style.display = "none"
         document.getElementById("cuadro2").style.display = "none"
         
     }
+    generarImagen(codigodot){
+        d3.select("#prueba3").graphviz()
+            .width(3000)
+            .height(1500)
+            .renderDot(codigodot)
+    }
 }
 
-var listalistas = new ListaCir();
-listalistas.insertar("Sharon");
-listalistas.insertar("Marleny");
-listalistas.insertar("Sheny");
-listalistas.insertar("Sonia");
-listalistas.insertar("Yesi");
-listalistas.insertar("Cami");
+/*var listalistas = new ListaCir();
+listalistas.insertarUs("Sharon");
+listalistas.insertarUs("Marleny");
+listalistas.insertarUs("Sheny");
+listalistas.insertarUs("Sonia");
+listalistas.insertarUs("Yesi");
+listalistas.insertarUs("Cami");
 console.log("---------CLIENTES INSERTADOS---------")
-listalistas.mostrar()
-
+//listalistas.mostrar()
+listalistas.insertarLibroCir("Sharon", "x")
+listalistas.insertarLibroCir("Marleny", "x")
+listalistas.insertarLibroCir("Sheny", "x")
+listalistas.insertarLibroCir("Sonia", "x")
+listalistas.insertarLibroCir("Yesi", "x")
+listalistas.insertarLibroCir("Cami", "x")
 
 listalistas.insertarLibroCir("Sharon", "libro1S")
 listalistas.insertarLibroCir("Sharon", "libro2S")
@@ -245,14 +258,10 @@ listalistas.showLibroCir("Sonia")
 listalistas.showLibroCir("Yesi")
 listalistas.showLibroCir("Cami")
 
-console.log(listalistas.graficar())
-try{
-    d3.select("#cuadro3").graphviz()
-        .width(3000)
-        .height(500)
-        .renderDot(listalistas.graficar())
-}catch(e){
-    console.log("error")
-}
+console.log(listalistas.graficarCir())
 
-listalistas.pruebaEsconder()
+d3.select("#grafica").graphviz()
+    .width(3000)
+    .height(500)
+    .renderDot(listalistas.graficarCir())
+//listalistas.pruebaEsconder()*/

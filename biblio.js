@@ -4,10 +4,12 @@ class Biblio{
     //static ola = new this.matrizDispersaA();
     static mat1;//ortogonal
     static mat2;//dispersa
+    static mat3;//arbol
+    static mat4;//lista de listas
     mostrarLog(){
         document.getElementById("Login").style.display = "block"
         document.getElementById("prueba1").style.display = "none"
-        
+        document.getElementById("tez").style.display = "none"
     }
 
     ocultarLog(){
@@ -35,19 +37,44 @@ class Biblio{
 
     divOrto(){
         document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
         document.getElementById("prueba1").style.display = "block"
     }
 
     divDis(){
         document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
         document.getElementById("prueba2").style.display = "block"
     }
 
+    divTree(){
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba3").style.display = "block"
+    }
+
+    divCir(){
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba3").style.display = "block"
+    }
 
     limpiar(){
         document.getElementById("prueba2").style.display = "none"
         document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
     }
+
+    limpiar2(){
+        document.getElementById("tez").style.display = "block"
+        document.getElementById("prueba2").style.display = "none"
+        document.getElementById("prueba1").style.display = "none"
+        document.getElementById("prueba3").style.display = "none"
+        document.getElementById("Login").style.display = "none"
+        document.getElementById("prueba1").style.display = "none"
+    }
+
+
 
     cargarArchivo(x){//Cargando libros
         Biblio.mat1 = new matrizOrtogonal();
@@ -71,7 +98,6 @@ class Biblio{
             const object = JSON.parse(contenido);
             for (const key in object) {
                 let libros = object[key];
-                //.cola.enqueue(pitza.tipo, pitza.forma, pitza.costo);
                 console.log("----------------------------------------------")
                 uno =  libros.fila;
                 dos =  libros.columna;
@@ -111,37 +137,15 @@ class Biblio{
         //grafoMatrizUno()
     }
 
-    cargarArchivoNO(){
-        
-        console.log("entra")
-        //document.getElementById("Login").style.display = "block"
-        const formUsers = document.querySelector("document");
-        //const fileUsers = document.querySelector("#file-users");
-        formUsers.addEventListener("submit", (event) => {
-            event.preventDefault();
-            if (!fileUsers.value.length) return;
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const str = event.target.result;
-                const json = JSON.parse(str);
-                console.log("json", json);
-                //for (const user of json) {
-                //usersCircular.insertar(user);
-                //}//
-                //usersCircular.render("#graph-double-circular");
-            };
-            reader.readAsText(fileUsers.files[0]);
-        });
-    }
-
-    cargarArchivoNN() {
+    cargarArchivo2(x){
+        Biblio.mat3 = new NodoTreeBB();
+        console.log("hola aquí sí entra2")
+        //let matriz = new matrizOrtogonal();
+        //let ortog = new matrizUltimo()
+        var uno =  0
+        var dos =  0
+        var tres = ""
         //console.log("Gola")
-        //console.log("hola"
-        let matriz = new matrizDispersaA(25);
-        var x = ""
-        //matriz = new matrizDispersaA(25);
-        matriz.insertDispersa(10,10,"nombre1")
-        //matriz.insertDispersa(10,10,"nombre1")
         var documento = x.target.files[0];
         if (!documento) {
             return;
@@ -151,52 +155,66 @@ class Biblio{
             let contenido = x.target.result;
             const object = JSON.parse(contenido);
             for (const key in object) {
-                let libros = object[key];
-                //.cola.enqueue(pitza.tipo, pitza.forma, pitza.costo);
-                console.log(libros.isbn + " " + libros.nombre_autor + " " + libros.nombre_libro + " " + libros.cantidad + " " + libros.fila + " " + libros.columna + " " + libros.paginas + " " + libros.categoria)
-            } 
+                let autores = object[key];
+                Biblio.mat3.insertDataNTree(autores.nombre_autor);
+                //Biblio.mat2.insertDispersa(uno, dos, tres)
+                //Biblio.mat.insertOrtogonal(libros.fila, libros.columna , libros.nombre_libro)
+                console.log(autores.dpi + " " + autores.nombre_autor + " " + autores.correo + " " + autores.telefono + " " + autores.direccion + " " + autores.biografia)
+            }
+            grafoArbol();
+
         }
         lectura.readAsText(documento);
-        
     }
 
-
+    cargarArchivo3(x) {
+        //ListaCir---
+        Biblio.mat4 = new ListaCir();
+        //console.log("hola aquí sí entra2")
+        //let matriz = new matrizOrtogonal();
+        //let ortog = new matrizUltimo()
+        var uno =  0
+        var dos =  0
+        var tres = ""
+        //console.log("Gola")
+        var documento = x.target.files[0];
+        if (!documento) {
+            return;
+        }
+        let lectura = new FileReader();
+        lectura.onload = function(x) {
+            let contenido = x.target.result;
+            const object = JSON.parse(contenido);
+            for (const key in object) {
+                let usuarios = object[key];
+                Biblio.mat4.insertarUs(usuarios.nombre_completo);
+                Biblio.mat4.insertarLibroCir(usuarios.nombre_completo, "x")
+                //Biblio.mat2.insertDispersa(uno, dos, tres)
+                //Biblio.mat.insertOrtogonal(libros.fila, libros.columna , libros.nombre_libro)
+                console.log(usuarios.dpi + " " + usuarios.nombre_completo + " " + usuarios.nombre_usuario + " " + usuarios.correo + " " + autores.rol + " " + autores.contrasenia + " " +  autores.telefono)
+            }
+            grafoCircular();
+        }
+        lectura.readAsText(documento);
+    }
 }
-
 function grafoMatrizUno(){
-
     //console.log("Holaaaaaaaaa")
     //Biblio.mat.graficarMatriz();
     Biblio.mat1.graficarMatrizOr();
     Biblio.mat2.graficarMatrizDis();
 }
 
-//============*Funcion para leer libros e incertarlos en la matriz
-/*function cargarArchivo(x) {
-    var biblio = new Biblio()
-    //console.log("Gola")
-    //console.log("hola")
-    
-    biblio.insertDispersa(10,10,"nombre1");
-    var documento = x.target.files[0];
-    if (!documento) {
-        return;
-    }
-    let lectura = new FileReader();
-    lectura.onload = function(x) {
-        let contenido = x.target.result;
-        const object = JSON.parse(contenido);
-        for (const key in object) {
-            let libros = object[key];
-            //.cola.enqueue(pitza.tipo, pitza.forma, pitza.costo);
-            console.log(libros.isbn + " " + libros.nombre_autor + " " + libros.nombre_libro + " " + libros.cantidad + " " + libros.fila + " " + libros.columna + " " + libros.paginas + " " + libros.categoria)
-        } 
-    }
-    lectura.readAsText(documento);
-}*/
+function grafoArbol(){
+    Biblio.mat3.graphTree();
+}
 
-
+function grafoCircular(){
+    Biblio.mat4.graficarCir();
+}
 console.log("1--------------")
 var uno = new Biblio();
 document.getElementById("document").addEventListener("change", uno.cargarArchivo, false);
+document.getElementById("carga2").addEventListener("change", uno.cargarArchivo2, false);
+document.getElementById("carga3").addEventListener("change", uno.cargarArchivo3, false);
 //uno.grafoMatrizUno()

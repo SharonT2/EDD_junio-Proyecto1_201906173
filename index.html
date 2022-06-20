@@ -9,7 +9,6 @@
     <link type="text/css" rel="stylesheet" href="estiloX.css"> <!--Modificación para que pudera encontrar el archivo css-->
 </head>
 <body>
-    
     <!---Importando las estructuras en el html-->
 <!--    <script type="text/javascript" src="./matrizDispersaMia.js"></script>
     <script type="text/javascript" src="./arbolBBXFUN.js"></script>
@@ -17,6 +16,14 @@
 <!--Frontend-->
     <div id="titulo">
         <h1>BIBLIOTECA VIRTUAL</h1>
+    </div>
+    <input type="submit" value="Home" id="Home" style="cursor: pointer" onclick="uno.limpiar2()"></input>
+
+
+
+    <div id="tez">
+        <p>Home principal, ingrese sus datos para poder realizar las funcionalidades de administrador o cliente</p>
+        <input type="submit" value="Tops" id="document3" style="cursor: pointer" onclick=""></input>
     </div>
 
     <!--<div id="titulo">
@@ -28,7 +35,6 @@
             <input type="file" name="document" id="document" style="cursor: pointer"></input>
         </div>---->
         <input type="button" value="Iniciar Sesión" id="document2" style="cursor: pointer" onclick="uno.mostrarLog()"></input>
-        <input type="submit" value="Tops" id="document3" style="cursor: pointer" onclick=""></input>
         <!-- CARGA MASIVA -->
 
         
@@ -40,12 +46,15 @@
 
 
     <div id="botones2"; style="display:none">
-        <input type="file" name="document" id="document" style="cursor: pointer"></input>
-        <input type="button" value="Libros Thriller" id="ortogonal" style="cursor: pointer" onclick="uno.divOrto()"></input>
-        <input type="button" value="Libros Fantasía" id="dispersa" style="cursor: pointer" onclick="uno.divDis()"></input>
+        <input type="file" value="CargarLibros" name="document" id="document" style="cursor: pointer"><b>CargarLibros</b></input>
+        <input type="file" name="CargaAutores" id="carga2" style="cursor: pointer"><b>CargarAutores</b></input>
+        <input type="file" name="Carga3" id="carga3" style="cursor: pointer"></input>
+        <input type="button" value="Libros Fantasía" id="ortogonal" style="cursor: pointer" onclick="uno.divOrto()"></input>
+        <input type="button" value="Libros Thriller" id="dispersa" style="cursor: pointer" onclick="uno.divDis()"></input>
+        <input type="button" value="Autores" id="autores" style="cursor: pointer" onclick="uno.divTree()"></input>
+        <input type="button" value="Usuarios" id="Usuarios" style="cursor: pointer" onclick="uno.divCir()"></input>
         <input type="button" value="Limpiar" id="limpiar" style="cursor: pointer" onclick="uno.limpiar()"></input>
     </div>
-
     <!---<div id="Entrada">
         <h2>Archivo de entrada</h2>
         <textarea cols="70" rows="2" wrap="hard" readonly="no"></textarea>
@@ -75,6 +84,7 @@
 
     <div id="prueba1"; style="display:none"> </div> <!--Para la matriz ortogonal-->
     <div id="prueba2"; style="display:none"> </div> <!--Para la matriz dispersa-->
+    <div id="prueba3"; style="display:none"> </div> <!--Para la matriz dispersa-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
     <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
@@ -82,6 +92,8 @@
     <!--<script type="text/javascript" src="./sharonIns.js"></script>---->
     <script type="text/javascript" src="./Ortogonal.js"></script>
     <script type="text/javascript" src="./dispersaS.js"></script>
+    <script type="text/javascript" src="./arbolBBXFUN.js"></script>
+    <script type="text/javascript" src="./ListaListasCir.js"></script>
     <script type="text/javascript" src="./biblio.js"></script><!--Este será el principal--> 
 </body>
 </html>

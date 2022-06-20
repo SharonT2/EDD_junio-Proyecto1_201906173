@@ -5,13 +5,13 @@ class NodoTreeBB{
         this.right = null;
     }
 
-    insertDataN(data){//insertar datos(método a llmar, este es el principal)
+    insertDataNTree(data){//insertar datos(método a llmar, este es el principal)
         if(data < this.valor){
             if(this.left == null){
                 this.left = new NodoTreeBB(data)
                 console.log(data)
             }else{
-                this.left.insertDataN(data)
+                this.left.insertDataNTree(data)
                 console.log(data)
             }
         }else if (data > this.valor){
@@ -19,7 +19,7 @@ class NodoTreeBB{
                 this.right = new NodoTreeBB(data)
                 console.log(data)
             }else{
-                this.right.insertDataN(data)
+                this.right.insertDataNTree(data)
                 console.log(data)
             }
         }else{
@@ -48,11 +48,13 @@ class NodoTreeBB{
         return null
     }
 
-    graph(){//Para graficar
+    graphTree(){//Para graficar
         
         var estyle ="digraph G { rankdir=SH; node [shape = record, style=filled, fillcolor=seashell2];\n";
         estyle += this.exploreTree();
         estyle += "}\n";
+        this.generarImagen(estyle);
+        console.log(estyle)
         return estyle;
     }
 
@@ -69,7 +71,15 @@ class NodoTreeBB{
         if (this.right != null){
             content += this.right.exploreTree() + "node" + (this.valor.split(" ").join("")) + ":C1->node" + this.right.valor.split(" ").join("") + ";\n";
         }
+
         return content;
+    }
+
+    generarImagen(codigodot){
+        d3.select("#prueba3").graphviz()
+            .width(3000)
+            .height(1500)
+            .renderDot(codigodot)
     }
 }
 
@@ -99,7 +109,7 @@ class arbolBB{
 
     
 }
-var nodoTreeBB = new NodoTreeBB()
+//var nodoTreeBB = new NodoTreeBB()
 //var arbol = new arbolBB()
 
 //nodoTreeBB.insert(3)
@@ -111,17 +121,19 @@ var nodoTreeBB = new NodoTreeBB()
 //nodoTreeBB.insert(7)
 //nodoTreeBB.insert(5)
 
-//nodoTreeBB.insertDataN(115)
-//nodoTreeBB.insertDataN(97)
-//nodoTreeBB.insertDataN(109)
-
-nodoTreeBB.insertDataN("Sharon Tagual")
-nodoTreeBB.insertDataN("Ander Porón")
-nodoTreeBB.insertDataN("Juan Godoy")
-nodoTreeBB.insertDataN("Xhunik Miguel")
-nodoTreeBB.insertDataN("Maria Magda")
-nodoTreeBB.insertDataN("Alberto Reyes")
-nodoTreeBB.insertDataN("Rosario Ramirez")
+//nodoTreeBB.insertDataNTree(115)
+//nodoTreeBB.insertDataNTree(97)
+//nodoTreeBB.insertDataNTree(109)
 
 
-console.log(nodoTreeBB.graph())
+//-------------
+//-nodoTreeBB.insertDataNTree("Sharon Tagual")
+//-nodoTreeBB.insertDataNTree("Ander Porón")
+//-nodoTreeBB.insertDataNTree("Juan Godoy")
+//-nodoTreeBB.insertDataNTree("Xhunik Miguel")
+//-nodoTreeBB.insertDataNTree("Maria Magda")
+//-nodoTreeBB.insertDataNTree("Alberto Reyes")
+//-nodoTreeBB.insertDataNTree("Rosario Ramirez")
+
+
+//-console.log(nodoTreeBB.graph())

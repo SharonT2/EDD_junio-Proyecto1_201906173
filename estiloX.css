@@ -93,6 +93,24 @@ h2{
     background-color: #2f3233;
     color: white;
 }
+#carga2{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#carga3{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
 #document3{
     margin-top: 10px;
     margin-left: 1420px;
@@ -120,6 +138,24 @@ h2{
     color: white;
 }
 #dispersa{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#autores{
+    margin-top: 10px;
+    margin-left: 1420px;
+    width: 300px;
+    height: 40px;
+    background-color: #2f3233;
+    color: white;
+}
+
+#Usuarios{
     margin-top: 10px;
     margin-left: 1420px;
     width: 300px;
@@ -207,6 +243,23 @@ input[type="button"]:hover{ /*color al boton, cuando el usuario se posicione en 
     margin-top: 100px;
     width: 1200px;
     height: 1050px;
+}
+
+#prueba3{
+    background: rgb(142, 97, 164);
+    margin-top: 100px;
+    width: 1800px;
+    height: 1050px;
+}
+#tez{
+    margin-top: 90px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+p{
+    color: white;
+    font-size: xx-large;
+    background-image: url(libro.jpg);  
 }
 
 
